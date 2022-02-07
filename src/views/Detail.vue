@@ -1,6 +1,6 @@
 <template>
-  <div id="Detail">
-    <el-card class="box-card" style="max-width: 80vw">
+  <div id="Detail" style="flex: auto;width: auto">
+    <el-card class="box-card" style="">
       <div slot="header" class="clearfix">
         <h3 style="text-align: center">{{ detail.title }}</h3>
       </div>

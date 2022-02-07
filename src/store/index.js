@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         cpc_data,
-        selected_index:"/"
+        selected_index:"/",
+        isCollapse:false,
 
     },
     mutations: {
