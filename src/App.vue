@@ -19,8 +19,8 @@
       </el-menu>
     </el-aside>
 
-    <el-container>
-      <el-header style="text-align: left; background-color: #b2becf" >
+    <el-container  style="font-size: 1vmax">
+      <el-header style="text-align: left; background-color: #b2becf;flex: auto;">
           <h4>"一图”释精神——描绘百年奋斗精神谱 H5作品</h4>
 
       </el-header>
