@@ -1,32 +1,53 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <el-container>
+    <el-aside>
+      <el-menu :router="true" style="border: 1px solid #eee" :default-active="this.$store.state.selected_index">
+        <el-menu-item index="/">
+          <i class="el-icon-location"></i>
+          <span slot="title">主页</span>
+        </el-menu-item>
+
+        <el-submenu v-for="(info,index) in cpc_data" :index="`${index}`" :key="info.name">
+          <template slot="title">
+          <i class="el-icon-map-location"></i>
+          <span>{{info.name}}</span>
+          </template>
+          <el-menu-item  v-for="(detail,subIndex) in info.details" :index="`/detail/${index}/${subIndex}`" :key="detail.title">{{detail.title}}</el-menu-item>
+        </el-submenu>
+
+      </el-menu>
+    </el-aside>
+
+    <el-container>
+      <el-header style="text-align: left; background-color: #b2becf" >
+          <h4>"一图”释精神——描绘百年奋斗精神谱 H5作品</h4>
+
+      </el-header>
+    <el-main>
+      <router-view/>
+    </el-main>
+    </el-container>
+    </el-container>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+import {mapState} from "vuex";
+import store from "@/store";
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+export default {
+  name: 'app',
+  data(){
+    return {
+      cpc_data: store.state.cpc_data,
 
-    &.router-link-exact-active {
-      color: #42b983;
     }
-  }
+  },
+
 }
+</script>
+
+<style>
 </style>
