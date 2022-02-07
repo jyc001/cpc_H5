@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-container>
-    <el-aside style="max-width: 300px;flex: auto;font-size: 1vmax">
+    <el-aside style="max-width: 35vw;flex: auto;font-size: 1vmax">
       <el-menu :router="true" style="border: 1px solid #eee" :default-active="this.$store.state.selected_index">
         <el-menu-item index="/">
           <i class="el-icon-location"></i>
