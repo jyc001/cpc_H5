@@ -1,5 +1,5 @@
 <template>
-  <div id="Detail" style="flex: auto;width: auto">
+  <div id="Detail" style="flex: auto;width: auto ">
     <el-card class="box-card" style="">
       <div slot="header" class="clearfix">
         <h3 style="text-align: center">{{ detail.title }}</h3>
