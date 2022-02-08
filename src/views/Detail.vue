@@ -1,16 +1,15 @@
 <template>
-  <div id="Detail" style="flex: auto;width: auto ">
-    <el-card class="box-card" style="">
+  <div id="Detail">
+    <el-page-header @back="goBack" :content="detail.name"/>
+    <el-card class="box-card" style="margin-top: 10px">
       <div slot="header" class="clearfix">
-        <h3 style="text-align: center">{{ detail.title }}</h3>
+        <h3 style="text-align: center">{{ detail.name}}</h3>
       </div>
       <div class="text item">
-        <img v-for="i in detail.img" :src="i" style="text-align: center"/><br/>
+        <img :src="detail.img" style="text-align: center"/><br/>
         <span v-html="detail.text"></span>
       </div>
     </el-card>
-
-
 
   </div>
 </template>
@@ -22,9 +21,14 @@ export default {
   name: "Detail",
   data() {
     return {
-      detail: store.state.cpc_data[this.$route.params.id1].details[this.$route.params.id2]
+      detail: store.state.cpc_data[this.$route.params.id]
     }
   },
+  methods:{
+    goBack() {
+      this.$router.back()
+    }
+  }
 
 }
 </script>

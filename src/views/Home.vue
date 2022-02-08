@@ -5,14 +5,17 @@
     <el-row>
       <el-col v-for="(item, index) in cpc_data" :key="item.name" :offset="index%2===0?0:2" :span="11"
               style="padding: 10px">
-        <el-card :body-style="{ padding: '0px' }" shadow="hover" style="width: 100%">
-          <img :src="item.img"
-               class="image">
-          <div style="padding: 14px;">
-            <span>{{ item.name }}</span>
-          </div>
-          <div class="bottom clearfix">
-            <time class="time">{{ item.date }}</time>
+        <el-card :body-style="{ padding: '0px' }" shadow="hover" style="width: 100%"
+                 v-on:click.c.capture="onclick(index)">
+          <div @click.capture.prevent="onclick(index)">
+            <img :alt="item.name"
+                 :src="item.img" class="image">
+            <div style="padding: 5px;">
+              <span>{{ item.name }}</span>
+            </div>
+            <div class="bottom clearfix">
+              <time class="time">{{ item.date }}</time>
+            </div>
           </div>
         </el-card>
       </el-col>
@@ -23,6 +26,7 @@
 
 <script>
 import store from "@/store";
+import router from "@/router";
 
 export default {
   name: "Home",
@@ -33,7 +37,11 @@ export default {
     }
 
   },
-  computed: {
+  computed: {},
+  methods: {
+    onclick(index) {
+      router.push("/detail/" + index);
+    }
   }
 }
 </script>
@@ -45,7 +53,8 @@ export default {
 }
 
 .bottom {
-  margin-top: 13px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   line-height: 12px;
 }
 
