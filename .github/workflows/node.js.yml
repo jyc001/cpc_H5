@@ -22,4 +22,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACTION_TOKEN }} #secrets.ACCESS_TOKEN是项目配置的密钥
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: dist # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+          CLEAN: true # Automatically remove deleted files from the deploying branch
