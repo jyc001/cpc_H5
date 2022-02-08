@@ -1,13 +1,14 @@
 <template>
   <div id="Detail">
     <el-page-header @back="goBack" :content="detail.name"/>
-    <el-card class="box-card" style="margin-top: 10px">
+    <img style="display: block;margin: 0 auto" :src="require(`../assets/${detail.img}`)" :alt="detail.name">
+    <el-card v-for="item in detail.details" :key="item.title" class="box-card" style="margin-top: 10px">
       <div slot="header" class="clearfix">
-        <h3 style="text-align: center">{{ detail.name}}</h3>
+        <h3 style="text-align: center">{{item.title}}</h3>
       </div>
       <div class="text item">
-        <img :src="detail.img" style="text-align: center"/><br/>
-        <span v-html="detail.text"></span>
+<!--        <img :src="detail.img" style="text-align: center"/><br/>-->
+        <span v-html="item.content"></span>
       </div>
     </el-card>
 
