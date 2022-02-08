@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-      <router-view/>
+    <router-view/>
+    <el-divider/>
+    <span style="text-align: right;display: block; margin-right: 6px;font-size: 17px;color: #999;">©2022 蒋奕成</span>
   </div>
 </template>
 
